@@ -1,0 +1,433 @@
+# Week-2-Day-07
+Assessment & Submission
+# Python lists and Tuples(Week-02 Day-01)
+# Create a list of numbers
+numbers = [48, 6, 78, 50, 77, 2]
+
+# Display the list
+print("Original List:", numbers)
+
+# Find the largest number in the list
+largest = max(numbers)
+print("Largest Number:", largest)
+
+# Find the smallest number in the list
+smallest = min(numbers)
+print("Smallest Number:", smallest)
+
+# Sort the list in ascending order
+numbers_ascending = sorted(numbers)
+print("List in Ascending Order:", numbers_ascending)
+
+# Sort the list in descending order
+numbers_descending = sorted(numbers, reverse=True)
+print("List in Descending Order:", numbers_descending)
+
+# Convert list to tuple
+numbers_tuple = tuple(numbers)
+print("Converted Tuple:", numbers_tuple)
+
+# Dictionaries and Sets(Week-02 Day-02)
+# 1. Create and Display Student Dictionary
+student = {
+    "roll_no": 535,
+    "name": "Malika",
+    "age": 20,
+    "course": "Electronics",
+    "marks": 85
+}
+
+print("Original Student Dictionary:")
+print(student)
+
+# 2. Add a New Element
+student["grade"] = "A
+
+print("\nDictionary After Adding 'grade':")
+print(student)
+
+# 3. Update an Existing Element
+student["marks"] = 90
+
+print("\nDictionary After Updating 'marks':")
+print(student)
+
+# 4. Delete an Element
+del student["age"]
+
+print("\nDictionary After Deleting 'age':")
+print(student)
+ # 5. Count Word Frequency Using Dictionary
+text = "python is easy and python is powerful and easy to learn"
+
+words = text.split()
+word_frequency = {}
+
+for word in words:
+    if word in word_frequency:
+        word_frequency[word] += 1
+    else:
+        word_frequency[word] = 1
+
+print("\nWord Frequency Count:")
+print(word_frequency)
+
+# 6. Perform Set Operations
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+print("\nSet 1:", set1)
+print("Set 2:", set2)
+
+# Union
+print("\nUnion:", set1.union(set2))
+
+# Intersection
+print("Intersection:", set1.intersection(set2))
+
+# Difference
+print("Difference (set1 - set2):", set1.difference(set2))
+
+# Symmetric Difference
+print("Symmetric Difference:", set1.symmetric_difference(set2))
+
+# python program on strings and operations(Week-02 Day-03)
+# String Operations in Python
+# Input string
+text = input("Enter a string: ")
+# 1. Reverse a String
+reversed_string = text[::-1]
+print("Reversed String:", reversed_string)
+
+# 2. Check Palindrome
+if text == reversed_string:
+    print("The string is a Palindrome.")
+else:
+    print("The string is not a Palindrome.")
+
+# 3. Count Vowels and Consonants
+vowels = "aeiouAEIOU"
+vowel_count = 0
+consonant_count = 0
+
+for char in text:
+     if char.isalpha():  # Check if character is alphabet
+        if char in vowels:
+            vowel_count += 1
+        else:
+            consonant_count += 1
+
+print("Number of Vowels:", vowel_count)
+print("Number of Consonants:", consonant_count)
+
+# 4. Character Frequency
+frequency = {}
+
+for char in text:
+    if char in frequency:
+        frequency[char] += 1
+    else:
+        frequency[char] = 1
+
+print("Character Frequency:")
+for key, value in frequency.items():
+    print(key, ":", value)
+
+# 5. String Slicing
+print("First 3 characters:", text[:3])
+print("Last 3 characters:", text[-3:])
+print("String from index 2 to 5:", text[2:6])
+print("String with step 2:", text[::2])
+
+# operation on file handling(Week-02 Day-04)
+ Student Record Management using File Handling
+FILE_NAME = "students.txt"
+# Function to write student records to file (overwrite mode)
+def write_students():
+    number = int(input("Enter number of students: "))
+
+    with open(FILE_NAME, "w") as file:
+        for i in range(number):
+            print("\nEnter details for Student", i + 1)
+            roll = input("Enter Roll Number: ")
+            name = input("Enter Name: ")
+            marks = input("Enter Marks: ")
+
+            record = roll + "," + name + "," + marks + "\n"
+            file.write(record)
+
+    print("\nStudent records written successfully.")
+
+# Function to read student records from file
+def read_students():
+    try:
+        with open(FILE_NAME, "r") as file:
+            data = file.readlines()
+
+            if not data:
+                print("No records found.")
+            else:
+                print("\nStudent Records:")
+                for line in data:
+                    roll, name, marks = line.strip().split(",")
+                    print("Roll:", roll, "Name:", name, "Marks:", marks)
+    except File Not Found Error:
+     print("File does not exist.")
+
+ # Function to append new student record
+def append_student():
+    with open(FILE_NAME, "a") as file:
+        print("\nEnter details to append")
+        roll = input("Enter Roll Number: ")
+        name = input("Enter Name: ")
+        marks = input("Enter Marks: ")
+
+        record = roll + "," + name + "," + marks + "\n"
+        file.write(record)
+
+    print("Record appended successfully.")
+
+# Main Menu
+while True:
+    print("\n1. Write Student Records")
+    print("2. Read Student Records")
+    print("3. Append Student Record")
+    print("4. Exit")
+
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        write_students()
+    elif choice == "2":
+        read_students()
+    elif choice == "3":
+        append_student()
+    elif choice == "4":
+        print("Program exited.")
+        break
+    else: 
+       print("Invalid choice.Please try again.")
+
+# Expectation Handling(Week-02 Day-05)
+# Program: Basic Try-Except Example
+def divide_numbers():
+    try:
+        num1 = float(input("Enter first number: "))
+        num2 = float(input("Enter second number: "))
+        result = num1 / num2
+        print("Result:", result)
+    except Exception as e:
+        print("Error occurred:", e)
+
+if _name_ == "_main_":
+    divide_numbers()
+    
+  # Program: Handle Division by Zero
+def safe_division():
+    try:
+        numerator = float(input("Enter numerator: "))
+        denominator = float(input("Enter denominator: "))
+        result = numerator / denominator
+        print("Division Result:", result)
+    except ZeroDivisionError:
+        print("Error: Cannot divide by zero.")
+    except ValueError:
+        print("Error: Invalid input. Please enter numeric values.")
+    finally:
+        print("Execution completed.")
+
+   # Program: Handle File Not Found and File Errors
+def read_file():
+    try:
+        file_name = input("Enter file name to read: ")
+        with open(file_name, "r") as file:
+            content = file.read()
+            print("File Content:\n", content)
+    except FileNotFoundError:
+        print("Error: File not found.")
+    except PermissionError:
+        print("Error: Permission denied.")
+    except IOError:
+        print("Error: Input/Output error occurred.")
+    finally:
+        print("File operation completed.")
+
+if _name_ == "_main_":
+    read_file()
+
+# Program: Custom Exception Example
+class NegativeNumberError(Exception):
+    """Custom exception for negative numbers."""
+    pass
+
+def check_positive_number():
+    try:
+        number = float(input("Enter a positive number: "))
+        if number < 0:
+            raise NegativeNumberError("Negative numbers are not allowed.")
+        print("Valid number:", number)
+    except NegativeNumberError as ne:
+        print("Custom Error:", ne)
+    except ValueError:
+        print("Error: Please enter a valid numeric value.")
+    finally:
+        print("Validation completed.")
+
+if _name_ == "_main_":
+    check_positive_number()
+
+# Mini Practice Programs(Week-02 Day-06)
+# Student Management System
+students = {}
+
+def add_student():
+    roll = input("Enter Roll Number: ")
+    name = input("Enter Name: ")
+    marks = input("Enter Marks: ")
+    students[roll] = {"Name": name, "Marks": marks}
+    print("Student Added Successfully")
+
+def view_students():
+    if not students:
+        print("No Records Found")
+    else:
+        for roll, details in students.items():
+            print("Roll:", roll)
+            print("Name:", details["Name"])
+            print("Marks:", details["Marks"])
+            print("-------------------")
+
+def search_student():
+    roll = input("Enter Roll Number to Search: ")
+    if roll in students:
+        print("Record Found")
+        print(students[roll])
+    else:
+        print("Student Not Found")
+
+def delete_student():
+    roll = input("Enter Roll Number to Delete: ")
+    if roll in students:
+        del students[roll]
+        print("Student Deleted")
+    else:
+        print("Student Not Found")
+
+while True:
+    print("\n1.Add 2.View 3.Search 4.Delete 5.Exit")
+    choice = input("Enter Choice: ")
+
+    if choice == "1":
+        add_student()
+    elif choice == "2":
+        view_students()
+    elif choice == "3":
+        search_student()
+    elif choice == "4":
+        delete_student()
+    elif choice == "5":
+        break
+
+ # Calculator Using Functions
+def add(a, b):
+    return a + b
+
+def subtract(a, b):
+    return a - b
+
+def multiply(a, b):
+    return a * b
+
+def divide(a, b):
+    if b == 0:
+        return "Division by Zero Error"
+    return a / b
+
+num1 = float(input("Enter First Number: "))
+num2 = float(input("Enter Second Number: "))
+
+print("1.Add 2.Subtract 3.Multiply 4.Divide")
+choice = input("Enter Choice: ")
+
+if choice == "1":
+    print("Result:", add(num1, num2))
+elif choice == "2":
+    print("Result:", subtract(num1, num2))
+elif choice == "3":
+    print("Result:", multiply(num1, num2))
+elif choice == "4":
+    print("Result:", divide(num1, num2))
+else:
+    print("Invalid Choice")
+
+# Menu Driven Program
+while True:
+    print("\n1.Square 2.Cube 3.Exit")
+    choice = input("Enter Choice: ")
+
+    if choice == "1":
+        num = int(input("Enter Number: "))
+        print("Square:", num * num)
+
+    elif choice == "2":
+        num = int(input("Enter Number: "))
+        print("Cube:", num * num * num)
+
+    elif choice == "3":
+        print("Program Exited")
+        break
+
+    else:
+        print("Invalid Choice")
+
+# File Based Record System
+def add_record():
+    file = open("students.txt", "a")
+    roll = input("Enter Roll Number: ")
+    name = input("Enter Name: ")
+    marks = input("Enter Marks: ")
+    file.write(roll + "," + name + "," + marks + "\n")
+    file.close()
+    print("Record Saved")
+
+def view_record():
+    try:
+        file = open("students.txt", "r")
+        data = file.readlines()
+        for line in data:
+            print(line.strip())
+        file.close()
+    except FileNotFoundError:
+        print("File Not Found")
+
+while True:
+    print("\n1.Add Record 2.View Record 3.Exit")
+    choice = input("Enter Choice: ")
+
+    if choice == "1":
+        add_record()
+    elif choice == "2":
+        view_record()
+    elif choice == "3":
+        break
+    else:
+        print("Invalid Choice")
+
+# Dictionary Application - Word Frequency Counter
+text = input("Enter a Sentence: ")
+words = text.split()
+
+frequency = {}
+
+for word in words:
+    if word in frequency:
+        frequency[word] += 1
+    else:
+        frequency[word] = 1
+
+print("Word Frequency:")
+for word, count in frequency.items():
+    print(word, ":", count)
+
+    else:
+        print("Invalid Choice")
