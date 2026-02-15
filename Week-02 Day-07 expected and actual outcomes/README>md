@@ -1,0 +1,42 @@
+# Expected and Actual Outcomes
+1.Python list and Tuples(Day-01)
+Expected Outcome:
+To create a list of Tuples,Display the list,Find the largest and smallest number in the list,Sort the list in ascending and descending orders,Convert the list to tuples
+
+Actual Outcome:
+The result excatly showed the list created,displayed the list,found the largest and smallest numbers,sorted the ascending and descending orders and converted the list to tuples.
+
+2.Dictionaries and Sets(Week-02 Day-02)
+Expected Outcomes:
+To create and display student dictionary,Add a new element,Update an existing element,delete an element.
+
+Actual Outcome:
+The result showed all the values properly to the data i provided.
+
+3.Strings and Operations(Week-02 Day-03)
+Expected Outcomes:
+To reverse a string,check palindrome,count vowels and consonents,character frequency.
+
+Actual Outcomes:
+The output excatly the needed result.
+
+4.File Handling(Week-02 Day-04)
+Expected Outcomes:
+Function to write student records,function to read student records from file,function to append new student record.
+
+Actual Outcomes:
+The result showed all the values properly to the data given.
+
+5.Expectation Handling(Week-02 Day-05)
+Expected Outcomes:
+Try-Expect example,handle division by zero,handle file not found and file errors.
+
+Actual Outcomes:
+The desired output was obtained for the program written.
+
+6.Mini practice programs(Week-02 Day-06)
+Expected Outcomes:
+Student management system,calculator using functions,file based record system,menu driven program,dictionary application-word frequency counter
+
+Actual Outcomes:
+The results showed all the values properly to the data given.
